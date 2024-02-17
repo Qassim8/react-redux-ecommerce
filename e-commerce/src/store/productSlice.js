@@ -7,7 +7,7 @@ const initialState = {products:[], loading:false, record:null, product:null};
 export const getProducts = createAsyncThunk('products/getProducts',async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try{
-        const res = await axios.get("https://localhost:3005/products");
+        const res = await axios.get("https://qassim8.github.io/products");
     const data = await res.data;
     return data
     }catch(error){
@@ -19,7 +19,9 @@ export const getProducts = createAsyncThunk('products/getProducts',async (_, thu
 export const getLimitedProducts = createAsyncThunk("products/getLimitProducts", async (_, thunkAPI) =>{
     const {rejectWithValue} = thunkAPI;
     try{
-        const response = await axios.get("https://localhost:3005/products?_limit=9");
+        const response = await axios.get(
+          "https://qassim8.github.io/products?_limit=9"
+        );
         const data = await response.data;
         return data
     }
@@ -32,7 +34,9 @@ export const getLimitedProducts = createAsyncThunk("products/getLimitProducts", 
 export const getProductDetails = createAsyncThunk("products/getProductDetails",async (id, thunkAPI) => {
     const {rejectWithValue} = thunkAPI;
     try{
-        const response = await axios.get(`https://localhost:3005/products/${id}`);
+        const response = await axios.get(
+          `https://qassim8.github.io/products/${id}`
+        );
         const data = await response.data;
         return data;
     }catch(error){
@@ -46,7 +50,9 @@ export const getItems = createAsyncThunk(
   async (item, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.get(`https://localhost:3005/products?q=${item}`);
+      const res = await axios.get(
+        `https://qassim8.github.io/products?q=${item}`
+      );
       const data = await res.data;
       return data;
     } catch (error) {
