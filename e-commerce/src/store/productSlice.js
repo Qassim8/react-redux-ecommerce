@@ -8,7 +8,7 @@ export const getProducts = createAsyncThunk('products/getProducts',async (_, thu
     const { rejectWithValue } = thunkAPI;
     try{
         const res = await axios.get(
-          "https://raw.githubusercontent.com/Qassim8/react-redux-ecommerce/master/data.json"
+          "https://qassim8.github.io/ecommerce-apis/products.json"
         );
     const data = await res.data;
     return data
@@ -22,7 +22,7 @@ export const getLimitedProducts = createAsyncThunk("products/getLimitProducts", 
     const {rejectWithValue} = thunkAPI;
     try{
         const response = await axios.get(
-          "https://raw.githubusercontent.com/Qassim8/react-redux-ecommerce/master/data.json?_limit=9"
+          "https://qassim8.github.io/ecommerce-apis/products.json?_limit=9"
         );
         const data = await response.data;
         return data
@@ -37,7 +37,7 @@ export const getProductDetails = createAsyncThunk("products/getProductDetails",a
     const {rejectWithValue} = thunkAPI;
     try{
         const response = await axios.get(
-          `https://raw.githubusercontent.com/Qassim8/react-redux-ecommerce/master/data.json/${id}`
+          `https://qassim8.github.io/ecommerce-apis/products.json/${id}`
         );
         const data = await response.data;
         return data;
@@ -53,7 +53,7 @@ export const getItems = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const res = await axios.get(
-        `https://raw.githubusercontent.com/Qassim8/react-redux-ecommerce/master/data.json?q=${item}`
+        `https://qassim8.github.io/ecommerce-apis/products.json?q=${item}`
       );
       const data = await res.data;
       return data;
