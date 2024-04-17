@@ -13,7 +13,9 @@ const initialState = {
 export const getCart = createAsyncThunk("cart/getCart", async (_, thunkAPI) => {
   const { rejectWithValue } = thunkAPI;
   try {
-    const response = await axios.get("http://localhost:3005/cart");
+    const response = await axios.get(
+      "https://fake-apis-uomb.onrender.com/cart"
+    );
     const data = await response.data;
     return data;
   } catch (error) {
@@ -29,9 +31,12 @@ export const setCart = createAsyncThunk(
     items.quantity = 1;
     localStorage.setItem("quantity",items.quantity)
     try {
-      const response = await axios.post("http://localhost:3005/cart", {
-        items,
-      });
+      const response = await axios.post(
+        "https://fake-apis-uomb.onrender.com/cart",
+        {
+          items,
+        }
+      );
       
       const data = await response.data;
       return data;
@@ -46,9 +51,12 @@ export const setCartWishlist = createAsyncThunk(
   async (items, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.post("http://localhost:3005/cart", {
-        items,
-      });
+      const response = await axios.post(
+        "https://fake-apis-uomb.onrender.com/cart",
+        {
+          items,
+        }
+      );
       const data = await response.data;
       return data;
     } catch (error) {
@@ -62,7 +70,7 @@ export const deleteItem = createAsyncThunk(
   async (id, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      await axios.delete(`http://localhost:3005/cart/${id}`);
+      await axios.delete(`https://fake-apis-uomb.onrender.com/cart/${id}`);
       return id;
     } catch (error) {
       rejectWithValue(error);

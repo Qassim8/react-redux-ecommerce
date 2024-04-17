@@ -1,59 +1,21 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const initialState = {products:[], loading:false, record:null, product:null};
+const initialState = {
+  products: [],
+  loading: false,
+  record: null,
+  product: null,
+};
 
 // All Products Thunk
-export const getProducts = createAsyncThunk('products/getProducts',async (_, thunkAPI) => {
-    const { rejectWithValue } = thunkAPI;
-    try{
-        const res = await axios.get(
-          "https://qassim8.github.io/ecommerce-apis/products.json"
-        );
-    const data = await res.data;
-    return data
-    }catch(error){
-        return rejectWithValue(error)
-    }
-});
-
-// Limited Products Thunk
-export const getLimitedProducts = createAsyncThunk("products/getLimitProducts", async (_, thunkAPI) =>{
-    const {rejectWithValue} = thunkAPI;
-    try{
-        const response = await axios.get(
-          "https://qassim8.github.io/ecommerce-apis/products.json?_limit=9"
-        );
-        const data = await response.data;
-        return data
-    }
-    catch(error){
-        return rejectWithValue(error)
-    }
-})
-
-// Products Details Thunk 
-export const getProductDetails = createAsyncThunk("products/getProductDetails",async (id, thunkAPI) => {
-    const {rejectWithValue} = thunkAPI;
-    try{
-        const response = await axios.get(
-          `https://qassim8.github.io/ecommerce-apis/products.json/${id}`
-        );
-        const data = await response.data;
-        return data;
-    }catch(error){
-        rejectWithValue(error);
-    }
-});
-
-// Filter By Search
-export const getItems = createAsyncThunk(
-  "products/getItems",
-  async (item, thunkAPI) => {
+export const getProducts = createAsyncThunk(
+  "products/getProducts",
+  async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
       const res = await axios.get(
-        `https://qassim8.github.io/ecommerce-apis/products.json?q=${item}`
+        "https://fake-apis-uomb.onrender.com/products"
       );
       const data = await res.data;
       return data;
@@ -63,6 +25,56 @@ export const getItems = createAsyncThunk(
   }
 );
 
+// Limited Products Thunk
+export const getLimitedProducts = createAsyncThunk(
+  "products/getLimitProducts",
+  async (_, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const response = await axios.get(
+        "https://fake-apis-uomb.onrender.com/products?_limit=6"
+      );
+      const data = await response.data;
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+// Products Details Thunk
+export const getProductDetails = createAsyncThunk(
+  "products/getProductDetails",
+  async (id, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const response = await axios.get(
+        `https://fake-apis-uomb.onrender.com/products/${id}`
+      );
+      const data = await response.data;
+      return data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  }
+);
+
+// Filter By Search
+export const getItems = createAsyncThunk(
+  "products/getItems",
+  async (item, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const res = await axios.get(
+        `https://fake-apis-uomb.onrender.com/products?q=${item}`
+      );
+      const data = await res.data;
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 
 const productSlice = createSlice({
   name: "products",
@@ -125,8 +137,8 @@ const productSlice = createSlice({
     builder.addCase(getItems.rejected, (state) => {
       state.loading = false;
     });
-  }
+  },
 });
 
-export const {cleanProducts, cleanRecord} = productSlice.actions;
+export const { cleanProducts, cleanRecord } = productSlice.actions;
 export default productSlice.reducer;
