@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-redux-ecommerce/static/css/main.fc2b8ca6.css",
-    "main.js": "/react-redux-ecommerce/static/js/main.c2b58ab4.js",
+    "main.js": "/react-redux-ecommerce/static/js/main.baf35514.js",
     "static/js/787.7fba10c5.chunk.js": "/react-redux-ecommerce/static/js/787.7fba10c5.chunk.js",
     "static/media/pexels-mike-bird-250288.jpg": "/react-redux-ecommerce/static/media/pexels-mike-bird-250288.0c58cfc2bdb13c932c36.jpg",
     "static/media/pexels-uncoveredlens-eze-joshua-3620411.jpg": "/react-redux-ecommerce/static/media/pexels-uncoveredlens-eze-joshua-3620411.fc2868c7dddae0fe2afd.jpg",
@@ -19,11 +19,11 @@
     "static/media/fa-v4compatibility.woff2": "/react-redux-ecommerce/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/react-redux-ecommerce/index.html",
     "main.fc2b8ca6.css.map": "/react-redux-ecommerce/static/css/main.fc2b8ca6.css.map",
-    "main.c2b58ab4.js.map": "/react-redux-ecommerce/static/js/main.c2b58ab4.js.map",
+    "main.baf35514.js.map": "/react-redux-ecommerce/static/js/main.baf35514.js.map",
     "787.7fba10c5.chunk.js.map": "/react-redux-ecommerce/static/js/787.7fba10c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc2b8ca6.css",
-    "static/js/main.c2b58ab4.js"
+    "static/js/main.baf35514.js"
   ]
 }
