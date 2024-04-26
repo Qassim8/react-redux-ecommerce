@@ -26,7 +26,7 @@ const Header = ({ main }) => {
     <>
       <header className="bg-purple-600 py-3 ">
         <nav className="contain flex justify-between items-center">
-          <Link to={"/"} className="no-underline text-white text-xl">
+          <Link to={"/react-redux-ecommerce"} className="no-underline text-white text-xl">
             <span className="italic text-slate-300">Mo-</span>Shop
           </Link>
           <i className="fa-solid fa-user text-white cursor-pointer mx-3"></i>
@@ -50,7 +50,7 @@ const Header = ({ main }) => {
             >
               <ul className="flex flex-col md:flex-row">
                 <li>
-                  <NavLink to={"/"} className="nav-link">
+                  <NavLink to={"/react-redux-ecommerce"} className="nav-link">
                     Home
                   </NavLink>
                 </li>
@@ -85,7 +85,7 @@ const Header = ({ main }) => {
                 >
                   {added && (
                     <span className="absolute flex h-2 w-2 end-0">
-                      <span className="absolute -end-1 -top-1 animate-ping absolute inline-flex h-5 w-5 rounded-full bg-red-500 opacity-0"></span>
+                      <span className="absolute -end-1 -top-1 animate-ping inline-flex h-5 w-5 rounded-full bg-red-500 opacity-0"></span>
                       <span className="inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
                   )}
@@ -99,7 +99,7 @@ const Header = ({ main }) => {
                 >
                   {add && (
                     <span className="absolute flex h-2 w-2 end-0">
-                      <span className="absolute -end-1 -top-1 animate-ping absolute inline-flex h-5 w-5 rounded-full bg-red-500 opacity-0"></span>
+                      <span className="absolute -end-1 -top-1 animate-ping inline-flex h-5 w-5 rounded-full bg-red-500 opacity-0"></span>
                       <span className="inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
                   )}

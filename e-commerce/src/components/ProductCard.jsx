@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import { setWishlist, deletedItem } from "../store/wishlistSlice";
 import { setCart } from "../store/cartSlice";
@@ -9,7 +9,6 @@ import useCarttItems from "../hooks/use-cart-items";
 
 const ProductCard = ({ product, index }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { item } = useWishlistItems();
   const { element } = useCarttItems();
   const cartItem = element?.map((item) => {
@@ -18,7 +17,7 @@ const ProductCard = ({ product, index }) => {
 
   // get all item's id that been saved in wishlist from wishlist slice
   const it = item?.map((item) => {
-    return item.items.id;
+    return item.id;
   });
 
   // save list of items id from wishlist in local storage
@@ -33,7 +32,6 @@ const ProductCard = ({ product, index }) => {
       if (productId.includes(id)) {
         dispatch(deletedItem(id))
         console.log(id)
-        // navigate("/wishlist");
       } else {
         dispatch(setWishlist({ id, img, title, price }));
       }

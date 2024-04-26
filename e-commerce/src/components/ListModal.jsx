@@ -26,12 +26,12 @@ const ListModal = ({ cart, wishlist }) => {
   const wishlistItems = item?.map((item, index) => (
     <div key={index}>
       <Link
-        to={`/${item.items.id}`}
+        to={`/${item.id}`}
         className="bg-slate-200 py-2 px-2 my-1 me-2 rounded flex items-center"
       >
-        <img src={item?.items.img} alt="item" className="w-10 h-10" />
+        <img src={item.img} alt="item" className="w-10 h-10" />
         <div className="">
-          <h3 className="text-slate-800 ms-8">{item?.items.title}</h3>
+          <h3 className="text-slate-800 ms-8">{item.title}</h3>
         </div>
       </Link>
     </div>

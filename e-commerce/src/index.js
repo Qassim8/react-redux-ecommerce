@@ -16,7 +16,7 @@ import Details from "./pages/Details";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-redux-ecommerce",
     element: <RootLayout />,
     children: [{ index: true, element: <RootLayout /> }],
   },

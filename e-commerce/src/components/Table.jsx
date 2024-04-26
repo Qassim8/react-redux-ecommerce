@@ -171,12 +171,12 @@ const Table = ({ page }) => {
           color="blue-gray"
           className="h-8 w-8 flex justify-center items-center"
         >
-          <img src={item?.items.img} alt="product img" className="max-w-full" />
+          <img src={item.img} alt="product img" className="max-w-full" />
         </Typography>
       </td>
       <td className="p-3">
         <Typography variant="small" color="blue-gray" className="font-normal">
-          {item?.items.title}
+          {item.title}
         </Typography>
       </td>
       <td className="p-3">
@@ -185,7 +185,7 @@ const Table = ({ page }) => {
           color="blue-gray"
           className="font-normal text-emerald-600"
         >
-          ${item?.items.price}
+          ${item.price}
         </Typography>
       </td>
       <td className="p-3">
@@ -194,7 +194,7 @@ const Table = ({ page }) => {
           color="blue-gray"
           className="font-medium flex justify-center items-center"
         >
-          {cartItem.includes(item?.items.id) ? (
+          {cartItem.includes(item.id) ? (
             <Button
               disabled
               className="bg-purple-300 text-white py-1 px-3 mx-1 cursor-not-allowed"
@@ -206,11 +206,11 @@ const Table = ({ page }) => {
               className="bg-purple-500 text-white py-1 px-3 mx-1"
               onClick={() =>
                 addToCart(
-                  item?.items.id,
-                  item?.items.img,
-                  item?.items.title,
+                  item.id,
+                  item.img,
+                  item.title,
                   1,
-                  item?.items.price
+                  item.price
                 )
               }
             >

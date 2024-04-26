@@ -2,7 +2,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelector, useDispatch } from "react-redux";
 import { getLimitedProducts, cleanRecord } from "../store/productSlice";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -56,12 +55,12 @@ const RootLayout = () => {
           <div className="swiper-item back-second">
             <div className="relative top-1/2 start-[50px] w-[200px] md:start-[100px] translate-y-[-50%] md:w-[450px] z-[200]">
               <span className="text-[25px] text-purple-400">Top Brand</span>
-              <h1 className="text-white text-[30px] md:text-[60px]">
+              <h1 className="text-white text-[23px] md:text-[60px]">
                 Formal Suites
               </h1>
-              <p className="text-white text-sm pb-5 mb-5">
+              <p className="text-white text-sm md:pb-5 mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                facilis tempora praesentium autem possimus, dolores officia..
+                facilis tempora praesentium autem
               </p>
               <Link
                 to={"/shop"}
@@ -75,15 +74,15 @@ const RootLayout = () => {
         <SwiperSlide>
           <div className="swiper-item back-first">
             <div className="relative top-1/2 start-[50px] w-[200px] md:start-[100px] translate-y-[-50%] md:w-[450px] z-[200]">
-              <span className="text-[25px] text-purple-400 relative">
+              <span className="text-[25px] text-purple-300 relative">
                 Winter Offers!
               </span>
-              <h1 className="text-white text-[30px] md:text-[60px]">
+              <h1 className="text-white text-[23px] md:text-[60px]">
                 Classic & Casual
               </h1>
-              <p className="text-white text-sm pb-5 mb-5">
+              <p className="text-white text-sm md:pb-5 mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                facilis tempora praesentium autem possimus, dolores officia..
+                facilis tempora praesentium autem
               </p>
               <Link
                 to={"/shop"}
